@@ -34,6 +34,7 @@ query_day_errors = '''select "Day", "Error Rate(%)" \
                       where "Error Rate(%)" > 1.0 \
                       order by "Error Rate(%)" desc;'''
 
+
 def run_query(query):
     # Return formatted results of query
     db = psycopg2.connect(database=DBNAME)
@@ -42,6 +43,7 @@ def run_query(query):
     results = c.fetchall()
     db.close
     return results
+
 
 def format_data(data):
     # Formats data for console print
