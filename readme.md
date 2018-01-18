@@ -34,6 +34,7 @@ Once you have a working Postgresql system, you're ready to add the *News* databa
     ```unzip newsdata.zip```
 
   3. You should now see the sql script file (*newsdata.sql*)for setting up the database in the directory. Add the database to your Postgres instance with the following command:
+
     ```psql -d news -f newsdata.sql```
 
 ### Running the Report
