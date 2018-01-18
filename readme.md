@@ -27,15 +27,15 @@ Once you have a working Postgresql system, you're ready to add the *News* databa
 
   1. From your Vagrant directory, download the data from the url provided:
 
-    ```wget https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip```
+  ```wget https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip```
 
   2. Unzip the file.
 
-    ```unzip newsdata.zip```
+  ```unzip newsdata.zip```
 
   3. You should now see the sql script file (*newsdata.sql*)for setting up the database in the directory. Add the database to your Postgres instance with the following command:
 
-    ```psql -d news -f newsdata.sql```
+  ```psql -d news -f newsdata.sql```
 
 ### Running the Report
 Now that you have the database running in your Postgres instance, you're ready to run the report.
