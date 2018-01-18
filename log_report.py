@@ -26,7 +26,7 @@ query_popular_authors = '''select authors.name as "Author", count(log.path) as
 
 query_day_errors = '''select "Day", "Error Rate(%)" \
                       from ( \
-                          select TO_CHAR(time, 'MONTHDD, YY') as "Day", \
+                          select TO_CHAR(time, 'MONTHDD, YYYY') as "Day", \
                               round(100 * ((1.0 * sum(case when \
                               status!='200 OK' then 1 else 0 end)) / \
                               (1.0 * count(status))), 1) as "Error Rate(%)" \
@@ -54,15 +54,15 @@ def format_data(data):
 
 print("\n\n**********\n\n")
 
-print("What are the most popular three articles of all time?")
+print("1. What are the most popular three articles of all time?")
 format_data(run_query(query_popular_articles))
 
 print("\n\n**********\n\n")
 
-print("Who are the most popular article authors of all time?")
+print("2. Who are the most popular article authors of all time?")
 format_data(run_query(query_popular_authors))
 
 print("\n\n**********\n\n")
 
-print("On which days did more than 1% of requests lead to errors?")
+print("3. On which days did more than 1% of requests lead to errors?")
 format_data(run_query(query_day_errors))
